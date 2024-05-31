@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         SpannableString spannableString = new SpannableString(text);
 
 
+
+
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View textView) {
@@ -132,6 +134,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        Button reportAbuseButton = findViewById(R.id.reportAbuseButton);
+        reportAbuseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ReportAbuseActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

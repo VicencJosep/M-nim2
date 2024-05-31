@@ -13,7 +13,7 @@ import android.util.Log;
 
 public interface API {
     // Ensure the base URL is correct and ends with a '/'
-    String BASE_URL = "http://147.83.7.203:80/dsaApp/";
+    String BASE_URL = "http://10.0.2.2:8080/dsaApp/";
 
     @GET("weapons/getWeapons")  // Ensure there is no leading '/' if the base URL ends with one
     Call<List<Weapon>> weapons();
@@ -23,6 +23,9 @@ public interface API {
 
     @POST("users/newUser")
     Call<User> addUser(@Body User user);
+
+    @POST("abuse/reportAbuse")
+    Call<AbuseReport> reportAbuse(@Body AbuseReport report);
 
 
     // Static initialization block to ensure Retrofit is set up correctly
